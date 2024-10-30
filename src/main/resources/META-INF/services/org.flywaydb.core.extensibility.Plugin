@@ -1,2 +1,3 @@
 com.bulain.flyway.database.dm.DmDatabaseType
+com.bulain.flyway.database.kingbase.KingbaseDatabaseType
 com.bulain.flyway.database.ExtDatabaseExtension
