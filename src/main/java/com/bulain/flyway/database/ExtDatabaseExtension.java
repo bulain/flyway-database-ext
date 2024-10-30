@@ -8,18 +8,18 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 /**
- * DM Database Extension.
+ * Ext Database Extension.
  */
-public class DmDatabaseExtension implements PluginMetadata {
+public class ExtDatabaseExtension implements PluginMetadata {
 
     public String getDescription() {
-        return "DM database support " + readVersion();
+        return "Ext database support " + readVersion();
     }
 
     private static String readVersion() {
         try {
             return FileUtils.copyToString(
-                    DmDatabaseExtension.class.getClassLoader().getResourceAsStream("com/bulain/flyway/database/version.txt"),
+                    ExtDatabaseExtension.class.getClassLoader().getResourceAsStream("com/bulain/flyway/database/version.txt"),
                     StandardCharsets.UTF_8);
         } catch (IOException e) {
             throw new FlywayException("Unable to read extension version: " + e.getMessage(), e);
