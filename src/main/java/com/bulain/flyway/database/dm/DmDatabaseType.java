@@ -11,6 +11,9 @@ import org.flywaydb.core.internal.jdbc.StatementInterceptor;
 import org.flywaydb.core.internal.parser.Parser;
 import org.flywaydb.core.internal.parser.ParsingContext;
 import org.flywaydb.core.internal.sqlscript.SqlScriptExecutorFactory;
+import org.flywaydb.database.oracle.OracleConnection;
+import org.flywaydb.database.oracle.OracleDatabase;
+import org.flywaydb.database.oracle.OracleParser;
 
 import java.sql.Connection;
 import java.sql.Types;

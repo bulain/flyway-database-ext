@@ -42,14 +42,13 @@ public class DmDatabase extends Database<DmConnection> {
         return new DmConnection(this, connection);
     }
 
-
     @Override
-    public final void ensureSupported() {
+    public final void ensureSupported(Configuration configuration) {
         //最小支持版本7
         ensureDatabaseIsRecentEnough("7.0");
         //最新支持版本8.1
-        ensureDatabaseNotOlderThanOtherwiseRecommendUpgradeToFlywayEdition("8.1", org.flywaydb.core.internal.license.Edition.ENTERPRISE);
-        recommendFlywayUpgradeIfNecessary("8.1");
+        //ensureDatabaseNotOlderThanOtherwiseRecommendUpgradeToFlywayEdition("8.1", org.flywaydb.core.internal.license.Edition.ENTERPRISE);
+        //recommendFlywayUpgradeIfNecessary("8.1");
     }
 
     @Override

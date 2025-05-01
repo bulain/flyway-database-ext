@@ -92,14 +92,9 @@ public class DmParser extends Parser {
 
     @Override
     protected ParsedSqlStatement createStatement(PeekingReader reader, Recorder recorder,
-                                                 int statementPos, int statementLine, int statementCol,
-                                                 int nonCommentPartPos, int nonCommentPartLine, int nonCommentPartCol,
-                                                 StatementType statementType, boolean canExecuteInTransaction,
-                                                 Delimiter delimiter, String sql
-
-
-    ) throws IOException {
-
+                                                 int statementPos, int statementLine, int statementCol, int nonCommentPartPos, int nonCommentPartLine,
+                                                 int nonCommentPartCol, StatementType statementType, boolean canExecuteInTransaction, Delimiter delimiter,
+                                                 String sql, List<Token> tokens, boolean batchable) throws IOException {
 
         if (PLSQL_VIEW_STATEMENT == statementType) {
             sql = sql.trim();
@@ -112,10 +107,7 @@ public class DmParser extends Parser {
 
         return super.createStatement(reader, recorder, statementPos, statementLine, statementCol,
                 nonCommentPartPos, nonCommentPartLine, nonCommentPartCol,
-                statementType, canExecuteInTransaction, delimiter, sql
-
-
-        );
+                statementType, canExecuteInTransaction, delimiter, sql, tokens, batchable);
     }
 
     @Override
